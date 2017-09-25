@@ -1,0 +1,31 @@
+<html> 
+<head> 
+<title>Chart Example</title> 
+
+<script type="text/javascript" src="MochiKit/MochiKit.js"></script>
+<script type="text/javascript" src="PlotKit/Base.js"></script>
+<script type="text/javascript" src="PlotKit/Layout.js"></script>
+<script type="text/javascript" src="PlotKit/Canvas.js"></script>
+<script type="text/javascript" src="PlotKit/SweetCanvas.js"></script>
+<script>
+
+
+function drawGraph() {
+    var layout = new PlotKit.Layout("bar");
+    layout.addDataset("sqrt", [[0, 0], [1, 1], [2, 1.414], [3, 1.73], [4, 2]]);
+    layout.evaluate();
+    var canvas = MochiKit.DOM.getElement("graph");
+    var plotter = new PlotKit.SweetCanvasRenderer(canvas, layout);
+    plotter.render();
+}
+MochiKit.DOM.addLoadEvent(drawGraph);
+</script>
+</head> 
+<body> 
+<h2>Chart Example</h2> 
+<p>This is a chart example.</p> 
+<p> 
+<div><canvas id="graph" height="300" width="300"></canvas></div>
+</p> 
+</body> 
+</html>

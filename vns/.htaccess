@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^vns.onlineia.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.vns.onlineia.com$
+RewriteRule ^/?$ "http\:\/\/onlineia\.com\/vnsweb" [R=301,L]
+
